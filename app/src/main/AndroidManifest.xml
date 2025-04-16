@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Projeto_Prova"
         tools:targetApi="31">
+
         <activity
             android:name=".Sobre"
             android:exported="false" />

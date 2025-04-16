@@ -15,8 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Cadastro_Tarefa extends AppCompatActivity {
 
-    private EditText editTitulo, editDescricao, editData;
-    private Button btnSalvar;
+    EditText cadastrarTarefa, descricao, data;
+    Button salvar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -30,12 +30,28 @@ public class Cadastro_Tarefa extends AppCompatActivity {
             return insets;
         });
 
-        editTitulo = findViewById(R.id.editTitulo);
-        editDescricao = findViewById(R.id.editDescricao);
-        editData = findViewById(R.id.editData);
-        btnSalvar = findViewById(R.id.btnSalvar);
-    }
+        cadastrarTarefa = findViewById(R.id.editTarefa);
+        descricao = findViewById(R.id.editDescricao);
+        data = findViewById(R.id.editData);
+        salvar = findViewById(R.id.btnSalvar);
 
+
+        salvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tarefaStr = cadastrarTarefa.getText().toString();
+                String descricaoStr = descricao.getText().toString();
+                String dataStr = data.getText().toString();
+                Intent intent = new Intent(Cadastro_Tarefa.this, Lista_Tarefas.class);
+                intent.putExtra("Tarefa",tarefaStr);
+                intent.putExtra("Descrição",descricaoStr);
+                intent.putExtra("Data",dataStr);
+                startActivity(intent);
+            }
+
+
+        });
+    }
     public void TelaPrincipal(View v){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);

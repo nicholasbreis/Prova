@@ -35,13 +35,13 @@
                 android:text="Título:" />
 
             <EditText
-                android:id="@+id/editTitulo"
+                android:id="@+id/editTarefa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Título da tarefa" />
+                android:hint="Título da tarefa:"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,8 +62,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="text"
-                android:hint="Descrição da tarefa" />
+                android:hint="Descrição da tarefa:"
+                android:inputType="text" />
         </LinearLayout>
 
         <LinearLayout
