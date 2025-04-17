@@ -12,11 +12,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnCadastro;
-    private Button btnLista;
-    private Button btnLink;
-    private Button btnAnalise;
-    private Button btnSobre;
+    Button btnCadastro;
+    Button btnLista;
+    Button btnLink;
+    Button btnAnalise;
+    Button btnSobre;
 
 
 

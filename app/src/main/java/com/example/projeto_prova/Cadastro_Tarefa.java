@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Cadastro_Tarefa extends AppCompatActivity {
 
-    EditText cadastrarTarefa, descricao, data;
+    EditText cadastrarTarefa, descricao, data, prioridade;
     Button salvar;
 
     @SuppressLint("MissingInflatedId")
@@ -24,15 +25,20 @@ public class Cadastro_Tarefa extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_cadastro_tarefa);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+
+
+        ScrollView scrollView = findViewById(R.id.scrollView);
+        ViewCompat.setOnApplyWindowInsetsListener(scrollView, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
+
         cadastrarTarefa = findViewById(R.id.editTarefa);
         descricao = findViewById(R.id.editDescricao);
         data = findViewById(R.id.editData);
+        prioridade = findViewById(R.id.editPrioridade);
         salvar = findViewById(R.id.btnSalvar);
 
 
@@ -42,19 +48,22 @@ public class Cadastro_Tarefa extends AppCompatActivity {
                 String tarefaStr = cadastrarTarefa.getText().toString();
                 String descricaoStr = descricao.getText().toString();
                 String dataStr = data.getText().toString();
+                String prioridadeStr = prioridade.getText().toString();
+
+
                 Intent intent = new Intent(Cadastro_Tarefa.this, Lista_Tarefas.class);
-                intent.putExtra("Tarefa",tarefaStr);
-                intent.putExtra("Descrição",descricaoStr);
-                intent.putExtra("Data",dataStr);
+                intent.putExtra("Tarefa", tarefaStr);
+                intent.putExtra("Descrição", descricaoStr);
+                intent.putExtra("Data", dataStr);
+                intent.putExtra("Prioridade", prioridadeStr);
                 startActivity(intent);
             }
-
-
         });
     }
-    public void TelaPrincipal(View v){
+
+    // Método para voltar ao menu principal
+    public void TelaPrincipal(View v) {
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
-
 }

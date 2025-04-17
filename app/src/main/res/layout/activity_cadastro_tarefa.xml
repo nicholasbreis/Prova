@@ -1,92 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Cadastro_Tarefa">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        android:padding="24dp">
 
         <TextView
             android:id="@+id/textCadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="30sp"
+            android:text="Cadastro de Tarefas"
             android:textAlignment="center"
-            android:text="Cadastro de Tarefas" />
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/textTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text="Título:" />
 
             <EditText
                 android:id="@+id/editTarefa"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Título da tarefa:"
+                android:layout_weight="2"
+                android:hint="Título da tarefa"
                 android:inputType="text" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/textDescricao"
-                android:layout_width="wrap_content"
+                android:layout_width="38dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="Descrição" />
+                android:text="Descrição:" />
 
             <EditText
                 android:id="@+id/editDescricao"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:hint="Descrição da tarefa:"
+                android:layout_weight="2"
+                android:hint="Descrição da tarefa"
                 android:inputType="text" />
         </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
 
             <TextView
                 android:id="@+id/textData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:text="Data:" />
 
             <EditText
                 android:id="@+id/editData"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:hint="00/00/0000"
+                android:inputType="date" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/textPrioridade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:ems="10"
-                android:inputType="numberDecimal"
-                android:hint="00/00/0000" />
+                android:text="Prioridade:" />
+
+            <EditText
+                android:id="@+id/editPrioridade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:hint="Alta, Média ou Baixa"
+                android:inputType="text" />
         </LinearLayout>
+
 
         <Button
             android:id="@+id/btnSalvar"
@@ -98,7 +129,8 @@
             android:id="@+id/btnTelaPrincipal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="TelaPrincipal"
-            android:text="Voltar ao Menu" />
+            android:text="Voltar ao Menu"
+            android:layout_marginTop="8dp"
+            android:onClick="TelaPrincipal" />
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
