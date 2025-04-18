@@ -51,11 +51,11 @@ public class Cadastro_Tarefa extends AppCompatActivity {
                 String prioridadeStr = prioridade.getText().toString();
 
 
+                Tarefa novaTarefa = new Tarefa(tarefaStr, descricaoStr, dataStr, prioridadeStr);
+
+                ArmazenarTarefa.listaTarefas.add(novaTarefa);
+
                 Intent intent = new Intent(Cadastro_Tarefa.this, Lista_Tarefas.class);
-                intent.putExtra("Tarefa", tarefaStr);
-                intent.putExtra("Descrição", descricaoStr);
-                intent.putExtra("Data", dataStr);
-                intent.putExtra("Prioridade", prioridadeStr);
                 startActivity(intent);
             }
         });

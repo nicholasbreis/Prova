@@ -1,6 +1,7 @@
 package com.example.projeto_prova;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+
+
         });
 
         btnCadastro = findViewById(R.id.btnCadastro);
@@ -36,6 +39,17 @@ public class MainActivity extends AppCompatActivity {
         btnLink = findViewById(R.id.btnLink);
         btnAnalise = findViewById(R.id.btnAnalise);
         btnSobre = findViewById(R.id.btnSobre);
+
+        btnLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Link que será aberto
+                String url = "https://ifrs.edu.br/rolante/tecnologia-em-analise-e-desenvolvimento-de-sistemas/";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -49,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+
+
     public void TelaAnalise(View v) {
         Intent i = new Intent(this, Analise_Inteligente.class);
         startActivity(i);
@@ -58,5 +74,6 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this,Sobre.class);
         startActivity(i);
     }
+
 
 }

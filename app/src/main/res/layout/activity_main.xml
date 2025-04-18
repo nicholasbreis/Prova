@@ -40,7 +40,7 @@
             android:id="@+id/btnLink"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Compartilhar Link" />
+            android:text="Acessar Site do Curso" />
 
         <Button
             android:id="@+id/btnAnalise"
